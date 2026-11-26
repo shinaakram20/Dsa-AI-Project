@@ -9,4 +9,15 @@ function getTwoSum(arr, target){
 
 }
 
-console.log('two sum indices: ', getTwoSum([3,2,4], 6))
+function twoSum(arr, target){
+    let seen = new Map();
+    for(let i=0; i< arr.length; i++){
+        let needed = target - arr[i];
+        if(seen.get(needed)){
+            return [seen.get(needed), i]
+        }
+        seen.set(arr[i], i)
+    }
+}
+
+console.log('two sum indices: ', twoSum([3,2,4], 6))
